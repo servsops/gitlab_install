@@ -21,7 +21,6 @@ fi
 which berks &> /dev/null
 if [ $? -ne 0 ]
 then
-  if [ `lsb_release -r` =~ "14.04" ]
   case `lsb_release -r` in
   *14.04*)
     apt-get install -y libgecode36 libgecode-dev
