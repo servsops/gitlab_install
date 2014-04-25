@@ -22,13 +22,19 @@ include_recipe "gitlab::users"
 include_recipe "gitlab::database_#{gitlab['database_adapter']}"
 
 
-
-#
-link '/opt/chef/embedded/bin/ruby' do
-  to '/usr/local/bin/ruby'
-end
-link '/opt/chef/embedded/bin/bundle' do
-  to '/usr/local/bin/bundle'
+case node['gitlab_install']['ruby']['install_method']
+  when "embedded"
+    #
+    link '/opt/chef/embedded/bin/ruby' do
+      to '/usr/local/bin/ruby'
+    end
+    link '/opt/chef/embedded/bin/bundle' do
+      to '/usr/local/bin/bundle'
+    end
+  when "package"
+    package "ruby1.9.3"
+  when "compile"
+    include_recipe "gitlab_install::ruby"
 end
 
 
