@@ -10,23 +10,20 @@
 # Does the setup of various GitLab dependencies
 gitlab = node['gitlab']
 
-case node['platform_version']
-  when "12.04"
-    include_recipe "gitlab::setup"
+#remove compile ruby
 
-  when "14.04"
-    # Install GitLab required packages
-    include_recipe "gitlab::packages"
-    
-    # Compile ruby
-    include_recipe "gitlab_install::ruby"
-    
-    # Setup GitLab user
-    include_recipe "gitlab::users"
-    
-    # Setup chosen database
-    include_recipe "gitlab::database_#{gitlab['database_adapter']}"
-end
+# Install GitLab required packages
+include_recipe "gitlab::packages"
+
+# Setup GitLab user
+include_recipe "gitlab::users"
+
+# Setup chosen database
+include_recipe "gitlab::database_#{gitlab['database_adapter']}"
+
+
+
+#
 
 
 # Does the configuration and install of GitLab
