@@ -2,6 +2,8 @@
 
 #chef-solo, embedded ruby
 
+apt-get update && apt-get install -y curl git vim
+
 echo $PATH | grep "chef/embedded/bin" &> /dev/null
 if [ $? -ne 0 ]
 then
@@ -19,8 +21,15 @@ fi
 which berks &> /dev/null
 if [ $? -ne 0 ]
 then
-  apt-get update &&
-  apt-get install libgecode30 libgecode-dev &&
+  if [ `lsb_release -r` =~ "14.04" ]
+  case `lsb_release -r` in
+  *14.04*)
+    apt-get install -y libgecode36 libgecode-dev
+    ;;
+  *12.04*)
+    apt-get install -y libgecode30 libgecode-dev
+    ;;
+  esac
   USE_SYSTEM_GECODE=1 gem install dep-selector-libgecode --no-ri --no-rdoc &&
   gem install berkshelf --no-ri --no-rdoc 
 fi
