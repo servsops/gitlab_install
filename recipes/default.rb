@@ -10,7 +10,7 @@
 # Does the setup of various GitLab dependencies
 gitlab = node['gitlab']
 
-case node['platform_version'] in
+case node['platform_version']
   when "12.04"
     include_recipe "gitlab::setup"
 

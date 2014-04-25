@@ -1,0 +1,30 @@
+{
+  "gitlab": {
+    "host": "localhost",
+    "port": "443",
+    "url": "https://localhost/",
+    "ssl_certificate": "-----BEGIN CERTIFICATE-----\nMIICNTCCAZ4CCQCjF6S2ox463jANBgkqhkiG9w0BAQUFADBfMQswCQYDVQQGEwJD\nTjELMAkGA1UECAwCSEsxCzAJBgNVBAcMAkhLMQswCQYDVQQKDAJJVDELMAkGA1UE\nCwwCSVQxHDAaBgkqhkiG9w0BCQEWDWdhbmtndUBxcS5jb20wHhcNMTQwNDI0MDI1\nOTA2WhcNMTUwNDI0MDI1OTA2WjBfMQswCQYDVQQGEwJDTjELMAkGA1UECAwCSEsx\nCzAJBgNVBAcMAkhLMQswCQYDVQQKDAJJVDELMAkGA1UECwwCSVQxHDAaBgkqhkiG\n9w0BCQEWDWdhbmtndUBxcS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGB\nAMSapwHhkUZHGRdzZx15XYT9rbp93D19FdBdHKE5Z5DEm3rKyHlK8X2KhaAYYkbY\nW9NCvOEKXtQi8R4hkKlny8gSUkxfhjFBeteXrzXX+vlLeRk+je/TGutK8gdIpd4R\nxBNDCy6DeretzYZT0qJT03v0MU1b0iTBh8SqYPnQtL/9AgMBAAEwDQYJKoZIhvcN\nAQEFBQADgYEAGXKIa+ypdO0jcM9Sl//k3U/Ij8dtQyvwy1WUA+lR3aDpQb/Ct37E\nSsrMNYqsw2FgKQE1GcrnQDZI04ydVYKw4aIxNCMv7qz8V2yyA6bY54c/O+A2cU5J\nxeTjEv55bpGPpxDX4YNjKAFD3xYHeoHkhkYIHRNSlzTvM679NWSZfww=\n-----END CERTIFICATE-----\n",
+    "ssl_certificate_key": "-----BEGIN RSA PRIVATE KEY-----\nMIICXgIBAAKBgQDEmqcB4ZFGRxkXc2cdeV2E/a26fdw9fRXQXRyhOWeQxJt6ysh5\nSvF9ioWgGGJG2FvTQrzhCl7UIvEeIZCpZ8vIElJMX4YxQXrXl6811/r5S3kZPo3v\n0xrrSvIHSKXeEcQTQwsug3q3rc2GU9KiU9N79DFNW9IkwYfEqmD50LS//QIDAQAB\nAoGBALcUoTMCQAtmx/nrkHmE/E6NAQvqin6EDh1DqBaG42ePfo4BamBxJqLWrQrh\nyhrY/eGkg0k5JAd+JnT9or3ul3csGvT4o4t4PaAxbYDHe+nG1Sxj/XN0Cu5J9lEe\naaXpmYmXlN/yqQh/bsZP0UtLaa55pdd3LPVTVvyG5FFgfApNAkEA9J087L8XZKAO\n5+7slGuan3EerGviq00axZIzA/6X0CZC6WLYLV+RFsE/OPxj+/9W1Ux+jKVcpf1g\naeDZt4BE6wJBAM3BVoaHTqIeob8kkZOtKfMU5+/qSf1ShY/JjG0czzAdOleTNMjg\nyN6Wf9CnoIauALi+Ea55qism7UK5bsAbdLcCQHOtJ/KNK3LafjIQOrC1chmUVP0U\nx8xaWh60VIu/CevVLC9SHwjV+LbaDBvWvzGcPmQAGJhKWtXkTIPFYS/16KECQQCv\nZvtZMe4B3LUsmoMT7pINbKwQ5ZzvvLKpkjsJJX8m2DPNRmvAN4hl4MzTVqNNTPbG\nhxnRsFw17zhiImxcjstfAkEAzBTUUlZuL0/hgNLeRP2DANMwRDP5UUZk5Odo8r17\nHshXlsq3k4kCi8+Cf31a/MX/KHFNaQBp/16n8JsG7cY//Q==\n-----END RSA PRIVATE KEY-----\n",
+    "email_from": "gitlab@example.com",
+    "support_email": "support@example.com",
+    "database_adapter": "mysql",
+    "database_user": "git",
+    "database_password": "fb4oi6emQaXLpNHXWIRYKYQOR",
+    "self_signed_cert": true
+  },
+  "mysql": {
+    "server_root_password": "fb4oi6emQaXLpNHXWIRYKYQOR",
+    "server_debian_password": "fb4oi6emQaXLpNHXWIRYKYQOR"
+  },
+  "postfix": {
+    "mail_type": "client",
+    "myhostname": "mail.example.com",
+    "mydomain": "example.com",
+    "myorigin": "mail.example.com",
+    "smtp_use_tls": "no"
+  },
+  "run_list": [
+    "postfix",
+    "gitlab_install::default"
+  ]
+}
