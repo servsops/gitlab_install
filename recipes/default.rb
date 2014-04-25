@@ -24,6 +24,12 @@ include_recipe "gitlab::database_#{gitlab['database_adapter']}"
 
 
 #
+link '/opt/chef/embedded/bin/ruby' do
+  to '/usr/local/bin/ruby'
+end
+link '/opt/chef/embedded/bin/bundle' do
+  to '/usr/local/bin/bundle'
+end
 
 
 # Does the configuration and install of GitLab
