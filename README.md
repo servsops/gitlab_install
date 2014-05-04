@@ -1,51 +1,41 @@
 # gitlab_install-cookbook
 
-TODO: Enter the cookbook description here.
+## TODO
 
-## Supported Platforms
+* choose whether install postfix or use gitlab smtp function
 
-TODO: List your supported platforms.
+* use chef with ruby2.1.1
 
-## Attributes
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['gitlab_install']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
 
 ## Usage
 
-### gitlab_install::default
+### Edit attributes in solo.json
 
-Include `gitlab_install` in your node's `run_list`:
-
-```json
+```
 {
   "run_list": [
-    "recipe[gitlab_install::default]"
+    "gitlab_install"
   ]
 }
 ```
 
-## Contributing
+### For chef-solo
 
-1. Fork the repository on Github
-2. Create a named feature branch (i.e. `add-new-recipe`)
-3. Write you change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request
+```
+#install berkshelf: support ubuntu 12.04, 14.04
 
-## License and Authors
+bash install_berkshelf.sh
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+#use berk create cookbooks directory, run with chef-solo
+#edit solo.json
+bash run_solo_script.sh
+
+#re-run
+chef-solo -c solo.rb -j solo.json
+```
+
+## Notes
+
+### ruby2.1.1 compile bug
+
+* because readline library update, one function ruby use to compile is delete from source code. So, one patch applied, maybe I will remove it later when ruby upgrade. [201404]
