@@ -1,3 +1,3 @@
 #embedded, compile, package
-default['gitlab_install']['ruby']['install_method'] = "embedded"
+default['gitlab_install']['ruby']['install_method'] = "system"
 

@@ -1,10 +1,13 @@
 # gitlab_install-cookbook
 
+## pre install
+
+* better install ruby and then `gem install chef; gem install bundler; gem install berks`
+
+
 ## TODO
 
 * choose whether install postfix or use gitlab smtp function
-
-* use chef with ruby2.1.1
 
 
 ## Usage
